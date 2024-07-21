@@ -16,6 +16,10 @@ exports.updateTodo = async(req,res) => {
                 title,
                 description,
                 updateAt : Date.now()
+            },
+            { // Options
+                new: true, // Return the updated document
+                runValidators: true // Ensure validators are run
             }
         )
         res.status(200).json({
